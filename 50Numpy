@@ -1,0 +1,369 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+import numpy as np
+
+
+# In[2]:
+
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+print("Array with Rank 2: \n", arr)
+
+
+# In[8]:
+
+
+np.empty([2, 2])
+
+
+# In[9]:
+
+
+z = np.copy(arr)
+print(z)
+
+
+# In[10]:
+
+
+a = ([1,2,3], [4,5,6]) 
+np.empty_like(a)
+
+
+# In[11]:
+
+
+np.eye(3, k=1)
+
+
+# In[12]:
+
+
+np.fromfunction(lambda i, j: i == j, (3, 3), dtype=int)
+
+
+# In[13]:
+
+
+np.linspace(2.0, 3.0, num=5, endpoint=False)
+
+
+# In[14]:
+
+
+np.mgrid[0:5,0:5]
+
+
+# In[15]:
+
+
+s = (2,2)
+np.zeros(s)
+
+
+# In[16]:
+
+
+y = np.arange(3, dtype=float)
+y
+
+
+# In[17]:
+
+
+np.zeros_like(y)
+
+
+# In[18]:
+
+
+x = np.array([1, 2, 2.5])
+x.astype(int)
+
+
+# In[19]:
+
+
+x = np.arange(9.0).reshape(3,3)
+np.atleast_1d(x)
+
+
+# In[20]:
+
+
+x = np.arange(8.0)
+np.array_split(x, 3)
+
+
+# In[21]:
+
+
+a = np.array((1,2,3))
+b = np.array((2,3,4))
+np.column_stack((a,b))
+
+
+# In[22]:
+
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6]])
+np.concatenate((a, b), axis=0)
+
+
+# In[23]:
+
+
+a = np.arange(4).reshape(2,2)
+a.diagonal()
+
+
+# In[24]:
+
+
+a = np.array((1,2,3))
+b = np.array((2,3,4))
+np.hstack((a,b))
+
+
+# In[25]:
+
+
+x = np.array([[1,2],[3,4]])
+np.repeat(x, 2)
+
+
+# In[26]:
+
+
+x = np.array([[[0], [1], [2]]])
+x.shape
+np.squeeze(x, axis=0).shape
+
+
+# In[27]:
+
+
+x = np.arange(4).reshape((2,2))
+x
+
+
+# In[28]:
+
+
+np.all([[True,False],[True,True]])
+
+
+# In[31]:
+
+
+a = np.arange(6).reshape(2,3) + 10
+np.argmin(a)
+
+
+# In[32]:
+
+
+np.argmax(a)
+
+
+# In[33]:
+
+
+x = np.array([3, 1, 2])
+np.argsort(x)
+
+
+# In[34]:
+
+
+np.searchsorted([1,2,3,4,5], 3, side='right')
+
+
+# In[35]:
+
+
+a = np.array([[1, 2], [3, 4], [5, 6]])
+np.compress([0, 1], a, axis=0)
+
+
+# In[36]:
+
+
+a = np.array([1,2,3])
+np.cumprod(a)
+
+
+# In[37]:
+
+
+a = np.array([[1,2,3], [4,5,6]])
+np.cumsum(a)
+
+
+# In[38]:
+
+
+a = np.array([1,2,3])
+b = np.array([0,1,0])
+np.inner(a, b)
+
+
+# In[39]:
+
+
+a = np.array([1, 2])
+a.fill(0)
+a
+
+
+# In[40]:
+
+
+a = np.array([[1,4],[3,1]])
+np.sort(a)
+
+
+# In[41]:
+
+
+x = np.arange(6).reshape(2, 3)
+np.putmask(x, x>2, x**2)
+x
+
+
+# In[42]:
+
+
+a = np.arange(5)
+np.put(a, [0, 2], [-44, -55])
+a
+
+
+# In[43]:
+
+
+a = np.array([1+2j, 3+4j, 5+6j])
+a.real
+
+
+# In[44]:
+
+
+np.sum([0.5, 1.5])
+
+
+# In[45]:
+
+
+x = [1, 2, 3]
+y = [4, 5, 6]
+np.cross(x, y)
+
+
+# In[46]:
+
+
+a = [[1, 0], [0, 1]]
+b = [[4, 1], [2, 2]]
+np.dot(a, b)
+
+
+# In[47]:
+
+
+rl = np.outer(np.ones((5,)), np.linspace(-2, 2, 5))
+rl
+
+
+# In[48]:
+
+
+a = np.array([[1, 2], [3, 4]])
+np.mean(a)
+
+
+# In[49]:
+
+
+a = np.array([1, 2, 3])
+b = np.array([2, 3, 4])
+np.vstack((a,b))
+
+
+# In[51]:
+
+
+x = np.arange(3.0)
+np.atleast_2d(x)
+
+
+# In[52]:
+
+
+np.atleast_2d(1, [1, 2], [[1, 2]])
+
+
+# In[53]:
+
+
+x = np.array([[1, 2], [3, 4]])
+m = np.asmatrix(x)
+m
+
+
+# In[54]:
+
+
+x = np.array([[4, 9, 2, 10],
+              [6, 9, 7, 12]])
+np.ptp(x, axis=1)
+
+
+# In[55]:
+
+
+a = np.array([1+2j, 3+4j, 5+6j])
+a.imag
+
+
+# In[56]:
+
+
+a = np.arange(5)
+np.put(a, [0, 2], [-44, -55])
+a
+
+
+# In[57]:
+
+
+x = np.arange(6).reshape(2, 3)
+np.putmask(x, x>2, x**2)
+x
+
+
+# In[58]:
+
+
+a = np.array([[1, 2], [3, 4]])
+np.std(a)
+
+
+# In[59]:
+
+
+a = np.array([[1, 2], [3, 4]])
+np.var(a)
+
+
+# In[ ]:
+
+
+
+
